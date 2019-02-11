@@ -1,7 +1,8 @@
 import React from 'react';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { Areas } from './components';
-import Contact from "../../utils/address-and-phone";
+import { CONTACT_HEADLINE } from '../../constants';
+const FEED_ENABLED = false;
 
 const ContactMe = () => (
   <section id="contact">
@@ -15,14 +16,13 @@ const ContactMe = () => (
           <span> looking for </span>
           software roles in
           <Areas />
-          If you find this profile interesting, let us grab a coffee sometime.
+          Should your needs match this profile;
         </p>
       </div>
-      <a href={`mailto:pritam18@hotmail.com`}> Shoot me an email!</a>
+      <a href={`mailto:pritam18@hotmail.com`}> {CONTACT_HEADLINE} </a>
     </div>
-    <div className="row">
+    {FEED_ENABLED && <div className="row">
       <aside className="twelve columns footer-widgets">
-        <Contact/>
         <div className="widget widget_tweets">
           <h4 className="widget-title">My Feed</h4>
           <TwitterTimelineEmbed
@@ -33,6 +33,7 @@ const ContactMe = () => (
         </div>
       </aside>
     </div>
+    }
   </section>
 );
 

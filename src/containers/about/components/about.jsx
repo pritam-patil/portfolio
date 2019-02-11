@@ -1,5 +1,4 @@
 import React from 'react';
-import Contact from '../../../utils/address-and-phone';
 
 const AboutMe = () => (
     <div className="nine columns main-col">
@@ -11,7 +10,6 @@ const AboutMe = () => (
             I did a bit of <span>freelance</span> work between jobs in Electron, Flutter and React-Native.
             I'm crazy about engaging design/UX and feel excited about ML/AI. I like to read and try out Ethical hacking.
         </p>
-        <Contact/>
     </div>
 );
 

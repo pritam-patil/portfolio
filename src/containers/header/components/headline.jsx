@@ -17,19 +17,19 @@ const Headline = () => (
             and <span> Mobile apps; </span>
             creating awesome and effective products
             for companies of all sizes around the globe.
-            Let's
+            Us start
             <a
             className="smoothscroll"
             href="#about"
             >
-                {` start scrolling `}
+                {` scrolling `}
             </a>
-            {` and learn more `}
+            {`to learn more about me, `}
             <a
             className="smoothscroll"
             href="#about"
             >
-                about me
+                {` let.`}
             </a>.
         </h3>
         <hr />

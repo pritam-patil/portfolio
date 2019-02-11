@@ -7,7 +7,7 @@ import React from 'react';
 
 const Slide = ({alt, src}) => (
   <img
-    style={{height: 360, width: 236}}
+    style={{height: 360, width: 236, padding: 8}}
     alt={alt}
     src={src}
   />

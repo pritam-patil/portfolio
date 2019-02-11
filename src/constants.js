@@ -12,11 +12,12 @@ export const CONTACT_TILE_TITLE = `Address and Phone`;
 export const NAVIGATE = {
     home: 'Home',
     about: 'About Me',
-    resume: 'Résumé',
+    resume: 'Experience',
     projects: 'Works',
-    contact: 'Contact Me'
+    contact: 'Contact Pritam'
 };
-
+export const CONTACT_HEADLINE = 'Shoot me an Email';
+export const CONTACT_SUBLINE = 'you on email?'
 /* HTML symbols */
 export const DOT = `⚫`;
 export const HEART = `♥`;
