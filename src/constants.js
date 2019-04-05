@@ -16,7 +16,7 @@ export const NAVIGATE = {
     projects: 'Works',
     contact: 'Contact Pritam'
 };
-export const CONTACT_HEADLINE = 'Shoot me an Email';
+export const CONTACT_HEADLINE = 'Shoot Pritam an Email';
 export const CONTACT_SUBLINE = 'you on email?'
 /* HTML symbols */
 export const DOT = `⚫`;

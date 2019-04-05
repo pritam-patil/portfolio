@@ -198,6 +198,10 @@ ul#nav li.current a { color: #F06000; }
    padding-top: 1rem;
 }
 
+#about .education > div {
+   padding-top: 1rem;
+}
+
 #about a, #about a:visited  { color: #fff; }
 #about a:hover, #about a:focus { color: #11ABB0; }
 
@@ -223,7 +227,7 @@ ul#nav li.current a { color: #F06000; }
    padding-top: 6px;
 }
 #about .main-col { padding-right: 5%; }
-#about .main-col p > span { color: #fff; }
+#about .main-col p > span { color: #000; }
 #about .download .button {
    margin-top: 6px;
    background: #444;
@@ -288,6 +292,32 @@ ul#nav li.current a { color: #F06000; }
    margin-top: 6px;
 }
 
+ul.jd {
+   list-style-type: circle;
+}
+
+ul.jd #tech {
+   margin-top: 16px;
+}
+
+/************************************************/
+/* Slideshow
+/************************************************/
+
+.fslide-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   margin: 16px;
+}
+
+.fslide-container img {
+   width: 120px;
+   height: 196px;
+   margin: 8px;
+}
+
 /*----------------------------------------------*/
 /*	Skill Bars
 /*----------------------------------------------*/
@@ -334,87 +364,87 @@ ul#nav li.current a { color: #F06000; }
 
 .python {
   	width: 75%;
-  	-moz-animation: photoshop 2s ease;
-  	-webkit-animation: photoshop 2s ease;
+  	-moz-animation: python 2s ease-in;
+  	-webkit-animation: python 2s ease-in;
 }
 .react {
   	width: 60%;
-  	-moz-animation: illustrator 2s ease;
-  	-webkit-animation: illustrator 2s ease;
+  	-moz-animation: react 2s ease;
+  	-webkit-animation: react 2s ease;
 }
 .node {
   	width: 50%;
-  	-moz-animation: wordpress 2s ease;
-  	-webkit-animation: wordpress 2s ease;
+  	-moz-animation: node 2s ease;
+  	-webkit-animation: node 2s ease;
 }
 .c {
-  	width: 50%;
-  	-moz-animation: css 2s ease;
-  	-webkit-animation: css 2s ease;
+  	width: 65%;
+  	-moz-animation: c 2s ease;
+  	-webkit-animation: c 2s ease;
 }
 .sql {
   	width: 60%;
-  	-moz-animation: html5 2s ease;
-  	-webkit-animation: html5 2s ease;
+  	-moz-animation: sql 2s ease;
+  	-webkit-animation: sql 2s ease;
 }
 .html {
   	width: 60%;
-  	-moz-animation: jquery 2s ease;
-  	-webkit-animation: jquery 2s ease;
+  	-moz-animation: html 2s ease;
+  	-webkit-animation: html 2s ease;
 }
 
 .mobile {
-    width: 55%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease;
+    width: 60%;
+    -moz-animation: html 2s ease;
+    -webkit-animation: html 2s ease;
 }
 
-@-moz-keyframes photoshop {
+@-moz-keyframes python {
+  0%   { width: 0px;  }
+  100% { width: 75%;  }
+}
+@-moz-keyframes react {
   0%   { width: 0px;  }
   100% { width: 60%;  }
 }
-@-moz-keyframes illustrator {
-  0%   { width: 0px;  }
-  100% { width: 55%;  }
-}
-@-moz-keyframes wordpress {
+@-moz-keyframes node {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
-@-moz-keyframes css {
+@-moz-keyframes c {
   0%   { width: 0px;  }
-  100% { width: 90%;  }
+  100% { width: 60%;  }
 }
-@-moz-keyframes html5 {
+@-moz-keyframes sql {
   0%   { width: 0px;  }
-  100% { width: 80%;  }
+  100% { width: 60%;  }
 }
-@-moz-keyframes jquery {
+@-moz-keyframes html {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
 
-@-webkit-keyframes photoshop {
+@-webkit-keyframes python {
+  0%   { width: 0px;  }
+  100% { width: 75%;  }
+}
+@-webkit-keyframes react {
   0%   { width: 0px;  }
   100% { width: 60%;  }
 }
-@-webkit-keyframes illustrator {
-  0%   { width: 0px;  }
-  100% { width: 55%;  }
-}
-@-webkit-keyframes wordpress {
+@-webkit-keyframes node {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
-@-webkit-keyframes css {
+@-webkit-keyframes c {
   0%   { width: 0px;  }
-  100% { width: 90%;  }
+  100% { width: 60%;  }
 }
-@-webkit-keyframes html5 {
+@-webkit-keyframes sql {
   0%   { width: 0px;  }
-  100% { width: 80%;  }
+  100% { width: 60%;  }
 }
-@-webkit-keyframes jquery {
+@-webkit-keyframes html {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
@@ -434,7 +464,7 @@ ul#nav li.current a { color: #F06000; }
    letter-spacing: 1px;
    text-align: center;
    margin-bottom: 48px;
-   color: #95A3A3;
+   color: rgb(36, 41, 41);
 }
 
 /* Portfolio Content */
@@ -526,25 +556,28 @@ ul#nav li.current a { color: #F06000; }
 
 /* popup modal */
 .popup-modal {
-	max-width: 550px;
+   display: flex;
+   flex-direction: column;
+   margin: auto;
+   max-width: 550px;
 	background: #fff;
 	position: relative;
 	margin: 0 auto;
 }
-.popup-modal .description-box { padding: 12px 36px 18px 36px; }
+.popup-modal .description-box { padding: 16px 24px; }
 .popup-modal .description-box h4 {
-   font: 15px/24px 'opensans-bold', sans-serif;
+   font: 20px/32px 'opensans-bold', sans-serif;
 	margin-bottom: 12px;
    color: black;
 }
 .popup-modal .description-box p {
 	font: 14px/24px 'opensans-regular', sans-serif;
-   color: #A1A1A1;
+   color: rgb(44, 43, 43);
    margin-bottom: 12px;
 }
 .popup-modal .description-box .categories {
    font: 11px/21px 'opensans-light', sans-serif;
-   color: #A1A1A1;
+   color: rgb(77, 74, 74);
    text-transform: uppercase;
    letter-spacing: 2px;
    display: block;
@@ -553,18 +586,34 @@ ul#nav li.current a { color: #F06000; }
 .popup-modal .description-box .categories i {
    margin-right: 8px;
 }
+
+.popup-modal .modal-image {
+   max-width: 280px;
+   max-height: 384px;
+   margin: auto;
+   margin-top: 16px;
+}
+
 .popup-modal .link-box {
-   padding: 18px 36px;
+   padding: 8px 24px;
    background: lightgray;
    text-align: left;
 }
 .popup-modal .link-box a {
    color:#CC5200;
 	font: 11px/21px 'opensans-bold', sans-serif;
-	text-transform: uppercase;
-   letter-spacing: 3px;
+	text-transform: capitalize;
+   letter-spacing: 2px;
    cursor: pointer;
+   margin-right: 8px;
 }
+
+.link-box .wrapped {
+   display: flex;
+   flex: 1;
+   flex-wrap: row wrap;
+}
+
 .popup-modal a:hover {	color: #00CCCC; }
 .popup-modal a.popup-modal-dismiss { color: black; margin-left: 24px; }
 

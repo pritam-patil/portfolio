@@ -1,6 +1,10 @@
 import React from 'react';
 import { DOT } from '../../../constants';
 
+const Stack = ({ desc }) => (
+  <li id="tech"> <strong>Tech used: </strong> { desc } </li>
+);
+
 const Work = () => (
     <div className="row work">
       <div className="three columns header-col">
@@ -11,108 +15,74 @@ const Work = () => (
           <div className="twelve columns">
             <h3>Raja Software Labs, Pune</h3>
             <p className="info">
-              Software Engineer
+              Software Engineer (Front-end)
               <span>•</span>
               <em className="date">Dec 2017 - Oct 2018</em>
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-              ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-            </p>
-          </div>
-        </div> {/* item end */}
-        <div className="row item">
-          <div className="twelve columns">
-            <h3>Freelance Mobile Developer</h3>
-            <p className="info">
-              ReactNative { DOT } Flutter
-              <span>•</span>
-              <em className="date">Jul 2017 - Nov 2017</em></p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-              ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-            </p>
+            <ul className="jd">
+              <li>Worked on developing UX for a Tech-giant’s Home automation system</li>
+              <li>Involved in shipping 6+ major release cycles with multiple IoT devices</li>
+              <Stack desc="ReactJS, Redux, BackboneJS, Jira, Git"/>
+            </ul>
           </div>
         </div> {/* item end */}
         <div className="row item">
           <div className="twelve columns">
             <h3>Velotio Technologies, Pune</h3>
             <p className="info">
-              Senior Software Engineer
+              Senior Software Engineer (Back-end)
               <span>•</span>
-              <em className="date">March 2017 - June 2017</em></p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-              ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
+              <em className="date">March 2017 - June 2017</em>
             </p>
-          </div>
-        </div> {/* item end */}
-        <div className="row item">
-          <div className="twelve columns">
-            <h3>Freelance Desktop App Developer</h3>
-            <p className="info"> Python { DOT } Electron
-              <span>•</span>
-              <em className="date">Dec 2016 - Feb 2017</em>
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-              ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-            </p>
+            <ul className="jd">
+              <li>Implemented Office 365 integration into SaaS optimization platform</li>
+              <li>Worked on Test framework for a PR analysis firm</li>
+              <Stack desc="Node.js, Ember-cli, Selenium, Mocha, Test‘em" />
+            </ul>
           </div>
         </div> {/* item end */}
         <div className="row item">
           <div className="twelve columns">
             <h3>Carnot Technologies, Mumbai</h3>
             <p className="info">
-              Senior Software Engineer
+              Senior Software Engineer (Back-end)
               <span>•</span>
-              <em className="date">March 2015 - Oct 2015</em>
+              <em className="date">March 2016 - Oct 2016</em>
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-              ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-            </p>
+            <ul className="jd">
+              <li>Scaled Backend system with cache solution to handle real-time data</li>
+              <li>Managed a Mobile development 3rd party for mobile apps changes</li>
+              <Stack desc="Python + Django, Redis, postgresql, Trello, Git" />
+            </ul>
           </div>
         </div> {/* item end */}
         <div className="row item">
           <div className="twelve columns">
             <h3>Airpush Inc, Bangalore </h3>
             <p className="info">
-              Software Engineer
+              Software Engineer (Back-end)
               <span>•</span>
-              <em className="date">Dec 2013 - Feb 2015</em></p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-              ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
+              <em className="date">Dec 2013 - Feb 2015</em>
             </p>
+            <ul className="jd">
+              <li>Implemented Advanced Location targeting (ALT) system along with framework for Fraud Detection in live ad serving. </li>
+              <li>Worked on backend system of ad-serving platform making CI, CD</li>
+              <Stack desc="Python, PHP, Lua, MySQL, Redis, Java, Jira, svn" />
+            </ul>
           </div>
         </div> {/* item end */}
         <div className="row item">
           <div className="twelve columns">
             <h3>Ittiam Systems</h3>
             <p className="info">
-              Software Engineer
+              Software Engineer (Systems)
               <span>•</span>
-              <em className="date">Jul 2012 - Oct 2013</em>
+              <em className="date">Jul 2012 - Nov 2013</em>
             </p>
-            <p>
-              This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-              Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-              nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-              ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
-            </p>
+            <ul className="jd">
+              <li>Worked on different AV encoder systems (MPEG2, H.264, AAC)</li>
+              <li>Involved in development of Media System SDK by Ittiam with OMX IL</li>
+            </ul>
           </div>
         </div> {/* item end */}
       </div> {/* main-col end */}
