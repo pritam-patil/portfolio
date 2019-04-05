@@ -11,13 +11,15 @@ export const TWITTER_URL = `https://twitter.com/TheDoucheP`;
 export const CONTACT_TILE_TITLE = `Address and Phone`;
 export const NAVIGATE = {
     home: 'Home',
-    about: 'About Me',
+    about: 'About',
     resume: 'Experience',
-    projects: 'Works',
-    contact: 'Contact Pritam'
+    projects: 'Projects',
+    contact: 'Contact'
 };
 export const CONTACT_HEADLINE = 'Shoot Pritam an Email';
 export const CONTACT_SUBLINE = 'you on email?'
 /* HTML symbols */
 export const DOT = `⚫`;
 export const HEART = `♥`;
+export const FEED_ENABLED = false;
+export const MAIL_TO=`mailto:pritam18@hotmail.com`;

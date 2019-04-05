@@ -7,7 +7,6 @@ const About = () => (
         <div className="row">
           <ProfilePic />
           <AboutMe />
-          <Education />
         </div>
       </section>
 );
