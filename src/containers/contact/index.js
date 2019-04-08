@@ -1,30 +1,44 @@
 import React from 'react';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { Areas } from './components';
-import { CONTACT_HEADLINE } from '../../constants';
-const FEED_ENABLED = false;
+import {
+  CONTACT_HEADLINE,
+  FEED_ENABLED,
+  MAIL_TO,
+} from '../../constants';
+import { Text } from '../../elements';
+
 
 const ContactMe = () => (
   <section id="contact">
     <div className="row section-head">
       <div className="two columns header-col">
-        <h1><span>Get In Touch.</span></h1>
+        <Text as="h1">
+          <span> Get In Touch.</span>
+        </Text>
       </div>
       <div className="ten columns">
-        <p className="lead">
-          I'm actively 
-          <span> looking for </span>
+        <Text as="p" class_="lead">
+          I'm
+          looking for
           software roles in
           <Areas />
-          Should your needs match this profile;
-        </p>
+          Should your needs match this profile,
+          </Text>
       </div>
-      <a href={`mailto:pritam18@hotmail.com`}> {CONTACT_HEADLINE} </a>
+      <Text
+          as='a' 
+          href={MAIL_TO}
+      >
+        { CONTACT_HEADLINE }
+      </Text>
     </div>
     {FEED_ENABLED && <div className="row">
       <aside className="twelve columns footer-widgets">
         <div className="widget widget_tweets">
-          <h4 className="widget-title">My Feed</h4>
+          <Text as='h4' class_="widget-title">
+            My Feed
+          </Text>
           <TwitterTimelineEmbed
             sourceType={"profile"}
             screenName={"TheDoucheP"}

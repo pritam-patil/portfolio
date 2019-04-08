@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes  from 'prop-types'
 import {
   GITHUB_URL,
-  GPLUS_URL,
   LINKEDIN_URL,
-  TWITTER_URL
+  TWITTER_URL,
+  STACK_OVERFLOW_URL,
 } from "../constants";
 
 const { string } = PropTypes;
@@ -25,7 +25,7 @@ const Social = props => (
     <li> <NewTab href={LINKEDIN_URL} className={"fa fa-linkedin"}/> </li>
     <li> <NewTab href={GITHUB_URL} className={"fa fa-github"}/> </li>
     <li> <NewTab href={TWITTER_URL} className={"fa fa-twitter"}/> </li>
-    <li> <NewTab href={GPLUS_URL} className={"fa fa-google-plus"}/> </li>
+    <li> <NewTab href={STACK_OVERFLOW_URL} className={"fa fa-stack-overflow"}/> </li>
   </ul>
 );
 
