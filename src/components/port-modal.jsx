@@ -20,9 +20,18 @@ const WrappedLink = () => {
 
 const FlexSides = () => (
     <div className="fslide-container">
-      <img src="https://github.com/pritam-patil/foodpanda_ui_clone/raw/master/android/screens/home_dish.jpg" ></img>
-      <img src="https://github.com/pritam-patil/medium_ui_clone/raw/master/android/screens/home.png" ></img>
-      <img src="https://github.com/pritam-patil/whatsapp_ui_clone/raw/master/android/screens/chats.png" ></img>
+      <img
+        alt="foodpanda-ui"
+        src="https://github.com/pritam-patil/foodpanda_ui_clone/raw/master/android/screens/home_dish.jpg"
+      />
+      <img
+        alt="medium-ui"
+        src="https://github.com/pritam-patil/medium_ui_clone/raw/master/android/screens/home.png"
+      />
+      <img
+        alt="whatsapp-ui"
+        src="https://github.com/pritam-patil/whatsapp_ui_clone/raw/master/android/screens/chats.png"
+      />
     </div>
   );
 

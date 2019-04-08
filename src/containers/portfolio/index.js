@@ -65,7 +65,7 @@ const Portfolio = () => (
       
       <PortModal 
         id="modal-01"
-        src="images/portfolio/readers-nest.png"
+        src="images/portfolio/modals/readers-nest-modal.png"
         title="Readers-Nest"
         desc="This website is a tribute to webpage discovery platform, StumbleUpon.com. Topic based trending articles from Reddit.com can be found here."
         link="http://readers-nest.surge.sh/"
@@ -74,7 +74,7 @@ const Portfolio = () => (
       />
       <PortModal 
         id="modal-02"
-        src="images/portfolio/moview.png"
+        src="images/portfolio/modals/moview-modal.png"
         title="Moview"
         desc="The website can be used to discover moviews to watch. Apply category, movie length or rating filters to find the right movie."
         link="http://moview.surge.sh/"
@@ -94,7 +94,7 @@ const Portfolio = () => (
       
       <PortModal 
         id="modal-04"
-        src="images/portfolio/modals/komique-relief.png"
+        src="images/portfolio/modals/komique-relief-modal.png"
         title="Komique-relief : Your comic reader"
         desc="Read the latest comics from xkcd.com"
         link="http://komique-relief.surge.sh/"
@@ -112,10 +112,10 @@ const Portfolio = () => (
       
       <PortModal 
         id="modal-06"
-        src="images/portfolio/modals/crypto.jpg"
+        src="images/portfolio/crypto.jpg"
         title="CrypTracker - A native Cryptocurrency tracker app"
         desc="A mobile app to track your favorite Cryptocurrencies."
-        link="#"
+        link="https://github.com/pritam-patil/native-crypto-tracker/"
         categories="Branding, App-Design"
         linkText="View Project"
       />
@@ -125,7 +125,7 @@ const Portfolio = () => (
         src="images/portfolio/modals/yodone_modal.jpg"
         title="YoDone! - Your simple ToDo lists"
         desc="Simple ToDo list maker app tracking daily progress."
-        link="#"
+        link="https://github.com/pritam-patil/YoDone"
         categories="AppDesign, Tasks"
         linkText="View Project"
       />
@@ -134,7 +134,7 @@ const Portfolio = () => (
         src="images/portfolio/modals/news.jpg"
         title="InstaNews - Location based News Articles"
         desc="This app serves as your custom ad-free location targetted news articles delivery agent."
-        link="#"
+        link="https://github.com/pritam-patil/InstaNews"
         categories="News, Content-Delivery, AppDesign"
         linkText="View Project"
       />     
