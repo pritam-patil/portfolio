@@ -1,5 +1,4 @@
 import React from 'react';
-import { DOT } from '../../../constants';
 
 const Stack = ({ desc }) => (
   <li id="tech"> <strong>Tech used: </strong> { desc } </li>
