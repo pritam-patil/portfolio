@@ -187,15 +187,10 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #about {
-   background: #2B2B2B;
+   background: #2b2b2b66;
    padding-top: 96px;
    padding-bottom: 66px;
    overflow: hidden;
-}
-
-#about .education {
-   background: #fff;
-   padding-top: 1rem;
 }
 
 #about .education > div {
@@ -210,11 +205,13 @@ ul#nav li.current a { color: #F06000; }
    color: #fff;
    margin-bottom: 12px;
 }
-#about p {
+#about .main-col p {
    font-size: 18px;
    line-height: 34px;
-   color: #7A7A7A;
+   color: rgb(243, 235, 235) !important;
+   margin-bottom: 0px !important;
 }
+
 #about .profile-pic {
    position: relative;
    width: 200px;
@@ -227,7 +224,12 @@ ul#nav li.current a { color: #F06000; }
    padding-top: 6px;
 }
 #about .main-col { padding-right: 5%; }
-#about .main-col p > span { color: #000; }
+#about .main-col p > span {
+   color: #ffffff !important;
+   font-size: 20px !important;
+   line-height: 24px;
+   font-weight: bold !important;
+ }
 #about .download .button {
    margin-top: 6px;
    background: #444;
@@ -248,7 +250,7 @@ ul#nav li.current a { color: #F06000; }
 
 #resume {
    background: #fff;
-   padding-top: 90px;
+   padding-top: 40px;
    overflow: hidden;
 }
 
@@ -272,6 +274,7 @@ ul#nav li.current a { color: #F06000; }
 #resume .main-col { padding-right: 10%; }
 
 .education, .work {
+   margin-top: 2rem;
    padding-bottom: 90px;
    padding-bottom: 24px;
    border-bottom: 1px solid #E8E8E8;

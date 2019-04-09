@@ -7,8 +7,8 @@ import {
 
 const Resume = () => (
   <section id="resume">
-    <Work />
     <Skills />
+    <Work />
     <Education />
   </section>
 );
