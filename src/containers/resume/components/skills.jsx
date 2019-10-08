@@ -7,7 +7,7 @@ const Skills = () => (
         <h1><span>Skills</span></h1>
       </div>
       <div className="nine columns main-col">
-        <p> With <span className="strong">5+ years</span> of experience in the industry and hands-on Backend,
+        <p> With <span className="strong">6+ years</span> of experience in the industry and hands-on Backend,
           Frontend and Mobile apps development in Advertising { DOT } IoT { DOT } SaaS domains,
           These are the skills in my armour:
         </p>
@@ -19,11 +19,11 @@ const Skills = () => (
             </li>
             <li key={`skills-react`}>
               <span className="bar-expand react" />
-              <em>React.JS</em>
+              <em>ReactJS + Redux</em>
             </li>
-            <li key={`skills-node`}>
-              <span className="bar-expand node" />
-              <em>Node.JS</em>
+            <li key={`skills-html`}>
+              <span className="bar-expand html" />
+              <em> HTML { DOT } CSS { DOT } JavaScript </em>
             </li>
             <li key={`skills-c`}>
               <span className="bar-expand c" />
@@ -33,9 +33,9 @@ const Skills = () => (
               <span className="bar-expand sql" />
               <em> SQL { DOT } NoSQL </em>
             </li>
-            <li key={`skills-html`}>
-              <span className="bar-expand html" />
-              <em> HTML { DOT } CSS </em>
+            <li key={`skills-node`}>
+              <span className="bar-expand node" />
+              <em>Node.JS</em>
             </li>
             <li key={`skills-mobile`}>
               <span className="bar-expand mobile" />

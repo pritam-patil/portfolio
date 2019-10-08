@@ -376,9 +376,9 @@ ul.jd #tech {
   	-webkit-animation: python 2s ease-in;
 }
 .react {
-  	width: 60%;
-  	-moz-animation: react 2s ease;
-  	-webkit-animation: react 2s ease;
+   width: 75%;
+   -moz-animation: react 2s ease;
+   -webkit-animation: react 2s ease;
 }
 .node {
   	width: 50%;
@@ -396,15 +396,15 @@ ul.jd #tech {
   	-webkit-animation: sql 2s ease;
 }
 .html {
-  	width: 60%;
-  	-moz-animation: html 2s ease;
-  	-webkit-animation: html 2s ease;
+   width: 65%;
+   -moz-animation: html 2s ease;
+   -webkit-animation: html 2s ease;
 }
 
 .mobile {
-    width: 60%;
-    -moz-animation: html 2s ease;
-    -webkit-animation: html 2s ease;
+   width: 50%;
+   -moz-animation: node 2s ease;
+   -webkit-animation: node 2s ease;
 }
 
 @-moz-keyframes python {
@@ -412,24 +412,24 @@ ul.jd #tech {
   100% { width: 75%;  }
 }
 @-moz-keyframes react {
-  0%   { width: 0px;  }
-  100% { width: 60%;  }
+   0%   { width: 0px;  }
+   100% { width: 75%;  }
 }
 @-moz-keyframes node {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
 @-moz-keyframes c {
-  0%   { width: 0px;  }
-  100% { width: 60%;  }
+   0%   { width: 0px;  }
+   100% { width: 65%;  }
 }
 @-moz-keyframes sql {
   0%   { width: 0px;  }
   100% { width: 60%;  }
 }
 @-moz-keyframes html {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
+   0%   { width: 0px;  }
+   100% { width: 65%;  }
 }
 
 @-webkit-keyframes python {
@@ -437,24 +437,24 @@ ul.jd #tech {
   100% { width: 75%;  }
 }
 @-webkit-keyframes react {
-  0%   { width: 0px;  }
-  100% { width: 60%;  }
+   0%   { width: 0px;  }
+   100% { width: 75%;  }
 }
 @-webkit-keyframes node {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
 @-webkit-keyframes c {
-  0%   { width: 0px;  }
-  100% { width: 60%;  }
+   0%   { width: 0px;  }
+   100% { width: 65%;  }
 }
 @-webkit-keyframes sql {
   0%   { width: 0px;  }
   100% { width: 60%;  }
 }
 @-webkit-keyframes html {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
+   0%   { width: 0px;  }
+   100% { width: 65%;  }
 }
 
 /* ------------------------------------------------------------------ */
