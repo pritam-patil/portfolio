@@ -23,15 +23,17 @@ const ContactMe = () => (
           looking for
           software roles in
           <Areas />
-          Should your needs match this profile,
-          </Text>
+        </Text>
       </div>
-      <Text
-          as='a' 
-          href={MAIL_TO}
-      >
-        { CONTACT_HEADLINE }
-      </Text>
+      <div style={{paddingLeft: "8px"}}>
+        Should your needs match this profile, 
+        <Text
+            as='a'
+            href={MAIL_TO}
+        >
+          { CONTACT_HEADLINE }
+        </Text>
+      </div>
     </div>
     {FEED_ENABLED && <div className="row">
       <aside className="twelve columns footer-widgets">

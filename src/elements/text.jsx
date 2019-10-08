@@ -1,16 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-
-
-
 const Text = props => {
-    console.log("Props to text");
-    console.table(props);
     const { as, class_, value } = props;
     let component = null;
-    console.log("otherProps to text");
-    // console.table(otherProps);
     switch (as) {
         case 'h1':
             component = <h1 className={class_}>

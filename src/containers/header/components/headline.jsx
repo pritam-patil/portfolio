@@ -5,32 +5,26 @@ const Headline = () => (
     <div className="row banner">
         <div className="banner-text">
         <h1 className="responsive-headline">
-            <h2> Howdy! </h2>
+            <h2> Howdy ! </h2>
             <span style={{fontWeight: 200, fontSize: '30px'}}>I'm</span> Pritam Patil.
         </h1>
         <h3>
-            I'm a
+            A
             <span> Web developer</span>
             , with experience in
-            <span> Front-end</span>,
-            <span> Back-end </span>
+            <span> Frontend</span>,
+            <span> Backend </span>
             and <span> Mobile apps; </span>
             creating awesome and effective products
             for companies of all sizes around the globe.
-            Us start
+            Let us start
             <a
             className="smoothscroll"
             href="#about"
             >
                 {` scrolling `}
             </a>
-            {`to learn more about me, `}
-            <a
-            className="smoothscroll"
-            href="#about"
-            >
-                {` let.`}
-            </a>.
+            {`to learn more about me.`}
         </h3>
         <hr />
         <Social className={"social"} />

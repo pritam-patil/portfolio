@@ -12,6 +12,22 @@ const Work = () => (
       <div className="nine columns main-col">
         <div className="row item">
           <div className="twelve columns">
+            <h3>IDC Technologies, Pune</h3>
+            <p className="info">
+              Software Engineer (Front-end)
+              <span>•</span>
+              <em className="date">Apr 2019 - Present</em>
+            </p>
+            <ul className="jd">
+              <li>BA for Tata Consultancy Services.</li>
+              <li>Worked in mostly independent role as ReactJS developer on a Automobiile
+E-commerce website. </li>
+              <Stack desc="ReactJS, Redux, Redux-Thunk, Jira, Git"/>
+            </ul>
+          </div>
+        </div> {/* item end */}
+        <div className="row item">
+          <div className="twelve columns">
             <h3>Raja Software Labs, Pune</h3>
             <p className="info">
               Software Engineer (Front-end)
@@ -57,7 +73,7 @@ const Work = () => (
         </div> {/* item end */}
         <div className="row item">
           <div className="twelve columns">
-            <h3>Airpush Inc, Bangalore </h3>
+            <h3>Airpush Inc, Bengaluru </h3>
             <p className="info">
               Software Engineer (Back-end)
               <span>•</span>
@@ -72,7 +88,7 @@ const Work = () => (
         </div> {/* item end */}
         <div className="row item">
           <div className="twelve columns">
-            <h3>Ittiam Systems</h3>
+            <h3>Ittiam Systems, Bengaluru</h3>
             <p className="info">
               Software Engineer (Systems)
               <span>•</span>
