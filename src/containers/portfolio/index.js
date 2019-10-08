@@ -31,34 +31,10 @@ const Portfolio = () => (
             subtitle="Web project starter kit"
           />
           <PortItem
-            href="#modal-04"
-            imgSrc="images/portfolio/komique-relief.png"
-            title="Komique-relief"
-            subtitle="Web Development"
-          />
-          <PortItem
             href="#modal-05"
             imgSrc="https://cdn-images-1.medium.com/max/1600/1*TFZQzyVAHLVXI_wNreokGA.png"
             title="UX/Design"
             subtitle="App Design using Flutter"
-          />
-          <PortItem
-            href="#modal-06"
-            imgSrc="images/portfolio/crypto.jpg"
-            title="CrypTracker"
-            subtitle="Cryptocurrency Tracker (React-Native)"
-          />
-          <PortItem
-            href="#modal-07"
-            imgSrc="images/portfolio/yodone_base.jpg"
-            title="YoDone - Simlpe ToDo lists"
-            subtitle="ToDo app in React-Native"
-          />
-          <PortItem
-            href="#modal-08"
-            imgSrc="images/portfolio/news.jpg"
-            title="InstaNews (News app)"
-            subtitle="Simple location based news app in React-Native"
           />
         </div> {/* portfolio-wrapper end */}
       </div> {/* twelve columns end */}
