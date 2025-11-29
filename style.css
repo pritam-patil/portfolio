@@ -577,3 +577,45 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.theme-urls {
+    display: none;
+}
+
+.theme-urls a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.theme-urls a:hover {
+    text-decoration: underline;
+}
+
+/* Theme button tooltips */
+.theme-btn {
+    position: relative;
+}
+
+.theme-btn::before {
+    content: 'Right-click to copy theme URL';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-color);
+    color: var(--background-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-btn:hover::before {
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 5px;
+}
