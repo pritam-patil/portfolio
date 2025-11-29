@@ -12,6 +12,7 @@ class PortfolioApp {
         this.showSection(this.currentSection);
         this.applyTheme(this.currentTheme);
         this.animateSkills();
+        this.checkUrlParams();
     }
 
     bindEvents() {
@@ -37,6 +38,26 @@ class PortfolioApp {
             e.preventDefault();
             this.handleFormSubmit(e);
         });
+    }
+
+    checkUrlParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const showThemes = urlParams.get('showThemes');
+        
+        if (showThemes === 'true' || showThemes === '1') {
+            this.toggleThemeSelector(true);
+        }
+    }
+
+    toggleThemeSelector(show) {
+        const themeSelector = document.querySelector('.theme-selector');
+        if (themeSelector) {
+            if (show) {
+                themeSelector.classList.add('visible');
+            } else {
+                themeSelector.classList.remove('visible');
+            }
+        }
     }
 
     showSection(sectionName) {

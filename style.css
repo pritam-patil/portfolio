@@ -98,9 +98,13 @@ body {
 }
 
 .theme-selector {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.theme-selector.visible {
+    display: flex; /* Show when visible class is added */
 }
 
 .theme-btn {
