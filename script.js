@@ -2,7 +2,7 @@
 class PortfolioApp {
     constructor() {
         this.currentSection = 'home';
-        this.currentTheme = 'professional';
+        this.currentTheme = 'tech';
         this.themeMappings = this.createThemeMappings(); // Create theme mappings
         this.init();
     }
@@ -53,6 +53,10 @@ class PortfolioApp {
             });
         });
 
+        document.getElementById('theme-ribbon')?.addEventListener('click', () => {
+            this.toggleThemeSelector();
+        });
+
         // Form submission
         document.querySelector('.contact-form')?.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -81,27 +85,6 @@ class PortfolioApp {
         return `${window.location.origin}${window.location.pathname}?theme=${themeParam}`;
     }
 
-    checkUrlParams() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const showThemes = urlParams.get('showThemes');
-        
-        if (showThemes === 'true' || showThemes === '1') {
-            this.toggleThemeSelector(true);
-            this.displayThemeUrls(); // Show theme URLs if selector is visible
-        }
-
-        // Log available theme URLs
-        this.logThemeUrls();
-    }
-
-     logThemeUrls() {
-        console.log('Available theme URLs:');
-        for (const [theme, param] of Object.entries(this.themeMappings)) {
-            const url = this.getThemeUrl(theme);
-            console.log(`${theme} (${param}): ${url}`);
-        }
-    }
-
     showTempMessage(message) {
         // Create a temporary message element
         const msgElement = document.createElement('div');
@@ -124,39 +107,12 @@ class PortfolioApp {
         }, 3000);
     }
 
-    displayThemeUrls() {
-        const container = document.querySelector('.theme-urls');
-        const list = document.getElementById('theme-urls-list');
-        
-        if (container && list) {
-            container.style.display = 'block';
-            list.innerHTML = '';
-            
-            for (const [theme, param] of Object.entries(this.themeMappings)) {
-                const url = this.getThemeUrl(theme);
-                const themeElement = document.createElement('div');
-                themeElement.style.marginBottom = '0.5rem';
-                themeElement.innerHTML = `
-                    <strong>${theme}:</strong> 
-                    <a href="${url}" target="_blank" style="color: var(--secondary-color);">?theme=${param}</a>
-                    <button onclick="portfolioApp.copyThemeUrl('${theme}')" 
-                            style="margin-left: 0.5rem; padding: 0.2rem 0.5rem; background: var(--accent-color); color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 0.7rem;">
-                        Copy
-                    </button>
-                `;
-                list.appendChild(themeElement);
-            }
-        }
-    }
-
-    toggleThemeSelector(show) {
+    toggleThemeSelector() {
         const themeSelector = document.querySelector('.theme-selector');
-        if (themeSelector) {
-            if (show) {
-                themeSelector.classList.add('visible');
-            } else {
-                themeSelector.classList.remove('visible');
-            }
+        if (themeSelector.classList.contains('visible')) {
+             themeSelector.classList.remove('visible');
+        } else {
+            themeSelector.classList.add('visible');
         }
     }
 
@@ -204,6 +160,7 @@ class PortfolioApp {
         // Update active theme button
         document.querySelectorAll('.theme-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.theme === themeName);
+            btn.classList.toggle('theme-special', btn.dataset.theme === themeName);
         });
     }
 
