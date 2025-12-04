@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="professional">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pritam Patil | Portfolio</title>
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="theme-ribbon" class="theme-ribbon">
+        <i class="fas fa-palette"></i>
+        <span>Themes</span>
+    </div>
+    <!-- Left Side Navigation -->
+    <nav id="left-navbar">
+        <div class="nav-header">
+            <div class="logo">
+                <h2>PP</h2>
+            </div>
+            <div class="theme-selector">
+                <button class="theme-btn active" data-theme="professional" style="background: #2c3e50;" title="Professional">
+                    <i class="fas fa-briefcase"></i>
+                </button>
+                <button class="theme-btn" data-theme="creative" style="background: #8e44ad;" title="Creative">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <button class="theme-btn" data-theme="minimal" style="background: #34495e;" title="Minimal">
+                    <i class="fas fa-minimize"></i>
+                </button>
+                <button class="theme-btn" data-theme="warm" style="background: #e67e22;" title="Warm">
+                    <i class="fas fa-heart"></i>
+                </button>
+                <button class="theme-btn" data-theme="tech" style="background: #16a085;" title="Tech">
+                    <i class="fas fa-code"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home" class="nav-link active" data-section="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#about" class="nav-link" data-section="about">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="#experience" class="nav-link" data-section="experience">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="#skills" class="nav-link" data-section="skills">
+                <i class="fas fa-cog"></i>
+                <span>Skills</span>
+            </a>
+            <a href="#education" class="nav-link" data-section="education">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Education</span>
+            </a>
+            <a href="#contact" class="nav-link" data-section="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+
+        <div class="nav-footer">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/pritam-patil/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/pritam-patil" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/TheDoucheP" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://stackoverflow.com/users/1263904/pritam" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+            <div class="resume-download">
+                <a class="download-btn" id="resume-download" href="assets/PritamPatil.pdf" download target="_blank" rel="noopener noreferrer" aria-label="Download Resume PDF">
+                    <i class="fas fa-download"></i>
+                    <span>Download Resume</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area (No Scroll) -->
+    <main id="main-content">
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <div class="section-content">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="name">Pritam Patil</span>
+                        <span class="title" data-theme-text="true">
+                            <span class="default-text">Staff Frontend Engineer</span>
+                            <span class="creative-text">React & TypeScript Specialist</span>
+                            <span class="minimal-text">Frontend Engineer</span>
+                            <span class="warm-text">Engineering Leader</span>
+                            <span class="tech-text">Full-Stack Engineer</span>
+                        </span>
+                    </h1>
+                    <p class="hero-description" data-theme-text="true">
+                        <span class="default-text">Building scalable solutions for complex business challenges</span>
+                        <span class="creative-text">Creating immersive digital experiences with modern web technologies</span>
+                        <span class="minimal-text">Clean code. Simple solutions.</span>
+                        <span class="warm-text">Building technology that brings people together</span>
+                        <span class="tech-text">Engineering robust systems with cutting-edge technology</span>
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Major Releases</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-container">
+                        <img src="assets/profile.png" alt="Pritam Patil" class="profile-image">
+                        <div class="profile-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="section-content">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p data-theme-text="true">
+                            <span class="default-text">Staff Frontend Engineer with 10+ years of experience, specializing in React, TypeScript, and scalable frontend architecture. A former Engineering Manager passionate about solving deep technical challenges, improving developer productivity, and mentoring through code and design.</span>
+                            <span class="creative-text">Creative problem-solver bridging design and technology to build exceptional user experiences with modern web technologies.</span>
+                            <span class="minimal-text">10+ years in frontend development. React specialist. Clean architecture.</span>
+                            <span class="warm-text">Passionate about mentoring engineers and building collaborative development environments that foster growth and innovation.</span>
+                            <span class="tech-text">Specializing in modern web architectures, performance optimization, and establishing engineering best practices for scalable applications.</span>
+                        </p>
+                        
+                        <div class="about-highlights">
+                            <div class="highlight-card">
+                                <i class="fas fa-rocket"></i>
+                                <h4>Performance</h4>
+                                <p>Optimized solutions</p>
+                            </div>
+                            <div class="highlight-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Quality</h4>
+                                <p>Production-ready code</p>
+                            </div>
+                            <div class="highlight-card">
+                                <i class="fas fa-users"></i>
+                                <h4>Leadership</h4>
+                                <p>Team mentoring & guidance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="content-section">
+            <div class="section-content">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="experience-timeline">
+                    <!-- DeepIntent Experience -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>DeepIntent Inc</h3>
+                            <span class="experience-date">2019 - 2025</span>
+                        </div>
+                        <div class="experience-positions">
+                            <div class="position">
+                                <h4>Engineering Manager</h4>
+                                <span class="position-date">JAN 2024 - OCT 2025</span>
+                                <ul class="position-details">
+                                    <li>Mentored engineers across multiple teams and streamlined agile delivery</li>
+                                    <li>Built custom integrations for ESLint and DangerJS for improving developer productivity</li>
+                                    <li>Developed Figma plugin for uniform writing style across website</li>
+                                    <li>Orchestrated company-wide TypeScript migration</li>
+                                    <li>Standardized PR review practices</li>
+                                </ul>
+                            </div>
+                            <div class="position">
+                                <h4>Staff Software Engineer</h4>
+                                <span class="position-date">JAN 2022 - DEC 2023</span>
+                                <ul class="position-details">
+                                    <li>Rebuilt common component library improving performance and accessibility</li>
+                                    <li>Integrated spell-check automation into CI/CD pipeline</li>
+                                    <li>Drove migration to React Testing Library improving test reliability</li>
+                                </ul>
+                            </div>
+                            <div class="position">
+                                <h4>Senior Software Engineer</h4>
+                                <span class="position-date">JAN 2021 - DEC 2021</span>
+                                <ul class="position-details">
+                                    <li>Architected complex React-based budget workflows with reusable, maintainable components</li>
+                                    <li>Introduced testing framework achieving 50% coverage</li>
+                                </ul>
+                            </div>
+                            <div class="position">
+                                <h4>Software Engineer II</h4>
+                                <span class="position-date">OCT 2019 - DEC 2020</span>
+                                <ul class="position-details">
+                                    <li>Delivered complex features and led React modernization</li>
+                                    <li>Championed React modernization efforts, reducing bugs by 20% and improving long-term maintainability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Previous Experience -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>IDC Technologies - TCS B.A.</h3>
+                            <span class="experience-date">APR 2019 - SEPT 2019</span>
+                        </div>
+                        <div class="position">
+                            <h4>Senior Software Engineer</h4>
+                            <ul class="position-details">
+                                <li>Engineered robust ReactJS framework for automotive dealership solutions portal</li>
+                                <li>Achieved 25% increase in user engagement and reduced bounce rates through improved interactivity</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Raja Software Labs</h3>
+                            <span class="experience-date">DEC 2017 - OCT 2018</span>
+                        </div>
+                        <div class="position">
+                            <h4>Software Engineer</h4>
+                            <ul class="position-details">
+                                <li>Shipped 6+ major releases for Google Nest in ReactJS</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Backend Experience Summary -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Backend & Systems Development</h3>
+                            <span class="experience-date">2012 - 2017</span>
+                        </div>
+                        <div class="position">
+                            <h4>Various Roles - Ittiam Systems, Airpush India, Carnot Labs</h4>
+                            <ul class="position-details">
+                                <li>Developed and maintained Advanced Location targeting for mobile advertising system</li>
+                                <li>Implemented backend of IoT Connected Car device from scratch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="content-section">
+            <div class="section-content">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Frontend Technologies</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TypeScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript (ES6+)</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">HTML5/CSS3</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3>Tools & Libraries</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <span class="skill-name">Redux Toolkit</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Webpack/Vite</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Jest/RTL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Storybook</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Backend & Other</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">CI/CD</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="content-section">
+            <div class="section-content">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3>Pune Institute of Computer Technology, Pune</h3>
+                        <span class="education-date">2008 - 2012</span>
+                    </div>
+                    <div class="education-details">
+                        <h4>Bachelor of Engineering in Computer Science</h4>
+                        <p class="education-grade">Grade: 69%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section">
+            <div class="section-content">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>pritam18@hotmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 76883 14828</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Pune, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
