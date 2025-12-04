@@ -1,22 +1,151 @@
-
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+  workflow_dispatch:  # Allows manual trigger
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Create directory structure
+        run: |
+          mkdir -p assets
+          # Check if PDF exists, if not create a placeholder
+          if [ ! -f "assets/PritamPatil.pdf" ]; then
+            echo "Creating placeholder PDF..."
+            touch assets/PritamPatil.pdf
+          fi
+          if [ ! -f "assets/favicon.png" ]; then
+            echo "Creating placeholder favicon..."
+            touch assets/favicon.png
+          fi
+          if [ ! -f "assets/profile.png" ]; then
+            echo "Creating placeholder profile..."
+            touch assets/profile.png
+          fi
+          # Ensure all required directories exist
+          mkdir -p .github/workflows
+
+      - name: Create package.json if not exists
+        run: |
+          if [ ! -f "package.json" ]; then
+            echo '{
+              "name": "portfolio-website",
+              "version": "1.0.0",
+              "description": "Personal portfolio website",
+              "homepage": "https://pritam-patil.github.io/portfolio/",
+              "main": "index.html",
+              "scripts": {
+                "dev": "serve .",
+                "build": "echo \"No build step required\"",
+                "test": "echo \"No tests configured\""
+              },
+              "dependencies": {},
+              "devDependencies": {}
+            }' > package.json
+          fi
+
+      - name: Install dependencies
+        run: |
+          # Install serve for local testing if needed
+          npm install --global serve
+
+      - name: Validate HTML
+        uses: antoine-roux/HTML-Validation@v1.1.0
+        with:
+          directory: ./
+          level: error
+          ignore-warnings: true
+
+      - name: Check for broken links
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        if: false  # Disabled by default, set to true to enable
+
+      - name: Optimize images
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+          jpegQuality: '80'
+          pngQuality: '80'
+          webpQuality: '80'
+          ignorePaths: 'node_modules/**,.git/**'
+
+      - name: Minify CSS
+        run: |
+          if [ -f "style.css" ]; then
+            # Install minifier
+            npm install -g css-minifier
+            # Minify CSS
+            css-minifier style.css --output style.min.css
+            # Optionally rename
+            mv style.min.css style.css || true
+          fi
+
+      - name: Minify JavaScript
+        run: |
+          if [ -f "script.js" ]; then
+            # Use terser for JS minification
+            npm install -g terser
+            terser script.js -o script.min.js -c -m
+            mv script.min.js script.js || true
+          fi
+
+      - name: Generate sitemap
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/</loc>
+              <lastmod>${{ github.event.head_commit.timestamp }}</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          </urlset>' > sitemap.xml
+
+      - name: Create robots.txt
+        run: |
+          echo 'User-agent: *
+          Allow: /
+          
+          Sitemap: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/sitemap.xml' > robots.txt
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
