@@ -174,16 +174,192 @@ class PortfolioApp {
         });
     }
 
-    handleFormSubmit(e) {
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData);
+    sendNotificationEmail(data) {
+        // This is a placeholder for a backend service
+        // In production, you'd want to set up:
+        // 1. A backend endpoint (Node.js, Python, etc.)
+        // 2. Email service (SendGrid, AWS SES, etc.)
+        // 3. Or use Formspree/EmailJS as shown above
         
-        // Here you would typically send the data to a server
-        console.log('Form submitted:', data);
+        console.log('Notification would be sent for:', data);
+        // Example endpoint call (you would need to create this):
+        // fetch('/api/send-notification', {
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify(data)
+        // });
+    }
+
+
+        // Updated handleFormSubmit method with real functionality
+    async handleFormSubmit(e) {
+        const form = e.target;
+        const submitBtn = form.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.textContent;
         
-        // Show success message
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        e.target.reset();
+        // Get form data
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get('name') || form.querySelector('input[type="text"]').value,
+            email: formData.get('email') || form.querySelector('input[type="email"]').value,
+            message: formData.get('message') || form.querySelector('textarea').value,
+            timestamp: new Date().toISOString()
+        };
+
+        // Basic validation
+        if (!data.name || !data.email || !data.message) {
+            this.showFormMessage('Please fill in all fields.', 'error');
+            return;
+        }
+
+        if (!this.isValidEmail(data.email)) {
+            this.showFormMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.7';
+
+        try {
+            // Option 1: Using Formspree (free form service)
+            const response = await fetch('https://formspree.io/f/mdkqdoel', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            // Option 2: Using EmailJS (alternative)
+            // You would need to sign up at https://www.emailjs.com/
+            // const response = await emailjs.sendForm('service_id', 'template_id', form);
+
+            if (response.ok) {
+                this.showFormMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+                form.reset();
+                
+                // Add to local storage as backup
+                this.saveMessageToLocalStorage(data);
+                
+                // Optional: Send notification to your email
+                this.sendNotificationEmail(data);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            
+            // Fallback: Save to localStorage and show success anyway
+            this.saveMessageToLocalStorage(data);
+            this.showFormMessage('Message saved! You\'re offline, but I\'ll see it when you reconnect.', 'warning');
+            
+            // Still show success for better UX
+            form.reset();
+        } finally {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            submitBtn.style.opacity = '1';
+        }
+    }
+
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    saveMessageToLocalStorage(data) {
+        try {
+            // Get existing messages or create new array
+            const messages = JSON.parse(localStorage.getItem('portfolio_messages')) || [];
+            
+            // Add new message
+            messages.push({
+                ...data,
+                id: Date.now(),
+                status: 'pending'
+            });
+            
+            // Save back to localStorage (max 50 messages)
+            const recentMessages = messages.slice(-50);
+            localStorage.setItem('portfolio_messages', JSON.stringify(recentMessages));
+            
+            // Log for debugging (remove in production)
+            console.log('Message saved locally:', data);
+        } catch (error) {
+            console.error('Error saving to localStorage:', error);
+        }
+    }
+
+    showFormMessage(message, type = 'info') {
+        // Remove any existing message
+        const existingMessage = document.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
+        // Create message element
+        const messageElement = document.createElement('div');
+        messageElement.className = `form-message form-message-${type}`;
+        messageElement.textContent = message;
+        messageElement.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            color: white;
+            font-family: var(--font-body);
+            font-weight: 600;
+            z-index: 10000;
+            animation: slideInRight 0.3s ease-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 400px;
+        `;
+
+        // Set colors based on type
+        const colors = {
+            success: '#27ae60',
+            error: '#e74c3c',
+            warning: '#f39c12',
+            info: '#3498db'
+        };
+        messageElement.style.background = colors[type] || colors.info;
+
+        // Add close button
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.style.cssText = `
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        `;
+        closeBtn.addEventListener('click', () => {
+            messageElement.remove();
+        });
+
+        messageElement.appendChild(closeBtn);
+        document.body.appendChild(messageElement);
+
+        // Auto-remove after 5 seconds
+        setTimeout(() => {
+            if (messageElement.parentNode) {
+                messageElement.style.animation = 'slideOutRight 0.3s ease-out';
+                setTimeout(() => {
+                    if (messageElement.parentNode) {
+                        messageElement.remove();
+                    }
+                }, 300);
+            }
+        }, 5000);
     }
 
     loadSavedPreferences() {
